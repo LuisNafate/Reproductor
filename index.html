@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/icono1.png"/>
+  <title>Reproductor</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+  <link rel="stylesheet" type=text/css href="bootstrap5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="media.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/280efc8080.js" crossorigin="anonymous"></script>
+  <script src="bootstrap5/js/bootstrap.min.js"></script>
+
+
+<header>
+
+  <nav class="navbar navbar-expand-lg  bg-body-tertiary">
+    <a class="navbar-brand">Espotifai</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Inicio <span class="sr-only">(actual)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Creditos</a>
+        </li>
+        <!-- Puedes agregar más elementos aquí -->
+      </ul>
+    </div>
+  </nav>
+
+</header>
+
+
+  <style>
+    body {  
+      background-color: #3b3939;
+
+    }
+  
+    .titulo{
+      color: #ffff;
+    }
+
+  
+  .si{
+    color: white;
+  }
+    
+
+    .s
+    {
+      
+      padding-top: 50px;
+    }
+  </style>
+  <body class="bg-dark">
+    
+
+    <div class="container">
+      <div class="row d-flex justify-content-between">
+        <div class="col-auto btncabezon">
+         <div class="botones">
+         <i class="fa-solid fa-arrow-left titulo"></i>
+         </div>
+        </div>
+
+        <div class="col-auto btncabezon">
+          <p class="d-none d-md-block titulo">Reproduciendo playlist</p>
+          <p class="d-block d-md-none titulo">Ahora</p>
+        </div>
+        
+        <div class="col-auto btncabezon">
+          <div class="botones">
+           <i class="fa-solid fa-bars titulo"></i>
+         </div>
+         </div>
+      </div>
+
+
+
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-md-5 form-group" id="myScrollspy">
+                <div id="player" class="card container">
+                    <img class="card-img mt-3" src="" alt="" id="imagen">
+                    <div class="cancionInfo">
+                        <h4 class="card-text" id="titulo"></h4>
+                        <p class="card-text" id="artista"></p>
+                    </div>
+                    <div id="pista">
+                        <progress class="progress" id="progress" value="0" max="1"></progress>
+                        <div id="handler"></div>
+                    </div>
+                    <div class="text-center">
+                        <small id="start-time"></small>
+                        <button class="btn btn-link text-danger">
+                            <h1><i id="prev" class="fas fa-step-backward" onclick="prevTrack()"></i></h1>
+                        </button>
+                        <button class="btn btn-link text-danger">
+                            <h1><i id="play" class="far fa-play-circle" onclick="playTrack()"></i></h1>
+                        </button>
+                        <button class="btn btn-link text-danger">
+                            <h1><i id="next" class="fas fa-step-forward" onclick="nextTrack()"></i></h1>
+                        </button>
+                        <small id="end-time"></small>
+                    </div>
+          
+                </div>
+            </div>
+            <div class="col-md-7" data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+                <ul class="list-group" id="contenido">
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="container mt-5">
+      <div class="row">
+          <div class="col-12">
+              <h2 id="playlist-title text-primary">Mas Playlist</h2>
+              <div class="container mt-5">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <!-- Card 1 -->
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="https://i.scdn.co/image/ab67616d00001e02bd1cd834d1c768e8b7b6354b" class="card-img-top" alt="Playlist 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Daltonico (Deluxe)</h5>
+                                <p class="card-text">Descripción breve de la Playlist 1.</p>
+                                <a href="#" class="btn btn-primary">Reproducir</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Card 2 -->
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="https://i.scdn.co/image/ab67616d00001e026df828bb10343f7bad08d4fe" class="card-img-top" alt="Playlist 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Evangelion Finaly</h5>
+                                <p class="card-text">Descripción breve de la Playlist 2.</p>
+                                <a href="#" class="btn btn-primary">Reproducir</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Card 3 -->
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="https://i.scdn.co/image/ab67616d0000b2736b7044043d7ff6ba81088e3f" class="card-img-top" alt="Playlist 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Imagine Dragons EP</h5>
+                                <p class="card-text">Descripción breve de la Playlist 3.</p>
+                                <a href="#" class="btn btn-primary">Reproducir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="media.js"></script>
+</body>
